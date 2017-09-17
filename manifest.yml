@@ -1,0 +1,7 @@
+---
+applications:
+ - name: skyfall-blog-frontend
+   random-route: true
+   instances: 1
+   memory: 256M
+   host: skyfall-blog-frontend
