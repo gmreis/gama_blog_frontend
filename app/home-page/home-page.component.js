@@ -23,21 +23,23 @@ angular.
         getPost(self.currentPage);
 
         function getPost(pageNumber) {
+          const api = 'https://skyfall-blog-dev.mybluemix.net/api/posts/';
+          //const api = 'localhost:3000/api/posts/';
           //Busca post no servidor
-          $http.get('https://skyfall-blog-dev.mybluemix.net/api/posts/'+pageNumber).then(function(response) {
+          $http.get(api+pageNumber).then(function(response) {
             self.articles = response.data;
             if(response.status === 200){
               if(response.data.length > 0){
-            console.log("te "+response.data.length);
-
+                console.log("te "+response.data.length);
               }else{
-            console.log("te "+response.data.length);
-            console.log("te "+JSON.stringify(response.data));
-
+                console.log("te "+response.data.length);
+                console.log("te "+JSON.stringify(response.data));
               }
             }else{
-
+              console.log("te "+self.currentPage);
             }
+          }, function(response) {
+            console.log("Error ");
           });
         };
 
