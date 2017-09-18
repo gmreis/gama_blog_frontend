@@ -10,16 +10,53 @@ angular.
       function HomePageController($http) {
         var self = this;
 
-        self.articles = [{
-          title: "Post1",
-          content: "Eu sou um post com muito conteudo e informacao. Todos deveriam ler e aprender aqui.",
-          articleby: "Autor1",
-          date: "09/01/2017"
-        },
-        {
-          title: "Post2",
-          content: "Eu sou um post com muito conteudo e informacao. Todos deveriam ler e aprender aqui."
-        }];
+        self.articles = [];
+
+        self.currentPage = 1;
+        self.hasNext = false;
+
+        self.getPost = getPost;
+        self.getNextPosts = getNextPosts;
+        self.getPrevPosts = getPrevPosts;
+
+        self.teste = teste;
+        getPost(self.currentPage);
+
+        function getPost(pageNumber) {
+          //Busca post no servidor
+          $http.get('https://skyfall-blog-dev.mybluemix.net/api/posts/'+pageNumber).then(function(response) {
+            self.articles = response.data;
+            if(response.status === 200){
+              if(response.data.length > 0){
+            console.log("te "+response.data.length);
+
+              }else{
+            console.log("te "+response.data.length);
+            console.log("te "+JSON.stringify(response.data));
+
+              }
+            }else{
+
+            }
+          });
+        };
+
+        function getPrevPosts() {
+          if(self.currentPage > 1){
+             self.currentPage--;
+          }
+          //Desabilita o botao case for a primeira pagina
+          if(self.currentPage == 1){
+            self.hasNext = false;
+          }
+        };
+
+        function getNextPosts() {
+          self.currentPage++;
+          if(self.currentPage > 1){
+            self.hasNext = true;
+          }
+        };
 
         function teste() {
           console.log("Eu funciono!")
