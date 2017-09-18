@@ -18,6 +18,7 @@ angular.
 
         self.getPost = getPost;
         self.registraUser = registraUser;
+        self.getFaceImg = getFaceImg
 
         self.getNextPosts = getNextPosts;
         self.getPrevPosts = getPrevPosts;
@@ -27,6 +28,11 @@ angular.
 
         function registraUser() {
           self.submitted = true;
+        }
+
+        function getFaceImg(originalString){
+          var result = "../img/"+originalString.replace("blog", "face");
+          return result;
         }
 
         function getPost(pageNumber) {
@@ -64,7 +70,8 @@ angular.
         };
 
         function teste() {
-          console.log("Eu funciono!")
+
+          console.log("Eu funciono! ");
         };
       }
     ]
