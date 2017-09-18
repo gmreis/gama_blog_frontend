@@ -6,8 +6,8 @@ angular.
   component('homePage', {
     templateUrl: 'home-page/home-page.template.html',
     controllerAs: "homeCtrl",
-    controller: ['$http',
-      function HomePageController($http) {
+    controller: ['$http', '$sce',
+      function HomePageController($http, $sce) {
         var self = this;
 
         self.articles = [];
@@ -19,6 +19,7 @@ angular.
         self.getPost = getPost;
         self.registraUser = registraUser;
         self.getFaceImg = getFaceImg
+        self.renderHtml = renderHtml;
 
         self.getNextPosts = getNextPosts;
         self.getPrevPosts = getPrevPosts;
@@ -28,6 +29,13 @@ angular.
 
         function registraUser() {
           self.submitted = true;
+        }
+
+        function renderHtml(texto) {
+          if(texto){
+             return $sce.trustAsHtml(texto);
+          }
+          return "";
         }
 
         function getFaceImg(originalString){

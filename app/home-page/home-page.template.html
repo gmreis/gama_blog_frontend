@@ -8,9 +8,9 @@
           <div class="card mb-4" ng-repeat="article in homeCtrl.articles">
             <img class="card-img-top" ng-src="{{homeCtrl.getFaceImg(article.image)}}" alt="Card image cap">
             <div class="card-body">
-              <h2 class="card-title"> {{article.title}} </h2>
-              <p class="card-text text-truncate"> {{article.description}}</p>
-              <a href="#!/post/{{article._id}}" class="btn btn-primary">Read More &rarr;</a>
+              <h2 class="card-title" ng-bind-html="homeCtrl.renderHtml(article.title)"></h2>
+              <p class="card-text text-truncate" ng-bind-html="homeCtrl.renderHtml(article.description)"></p>
+              <a href="#!/post/{{article._id}}" class="btn btn-primary">Continuar &rarr;</a>
             </div>
             <div class="card-footer text-muted">
               Por <b>{{article.author}}</b> em {{article.date_create | date:'MM/dd/yyyy'}}

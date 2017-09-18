@@ -6,19 +6,27 @@ angular.
   component('showpostPage', {
     templateUrl: 'showpost-page/showpost-page.template.html',
     controllerAs: 'showPostCtrl',
-    controller: ['$http','$routeParams',
-      function ShowPostPageController($http, $routeParams) {
+    controller: ['$http','$routeParams', '$sce',
+      function ShowPostPageController($http, $routeParams, $sce) {
         var self = this;
 
         self.postId = $routeParams.postId;
         self.submitted = false;
         self.artigo = "";
 
+        self.renderHtml = renderHtml;
         self.registraUser = registraUser;
         self.getPost = getPost;
-        
+
         self.teste = teste;
         getPost(self.postId);
+
+        function renderHtml(texto) {
+          if(texto){
+             return $sce.trustAsHtml(texto);
+          }
+          return "";
+        }
 
         function registraUser() {
           self.submitted = true;

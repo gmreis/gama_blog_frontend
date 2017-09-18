@@ -6,7 +6,7 @@
     <div class="col-lg-8">
 
       <!-- Title -->
-      <h1 class="mt-4">{{showPostCtrl.artigo.title}}</h1>
+      <h1 class="mt-4" ng-bind-html="showPostCtrl.renderHtml(showPostCtrl.artigo.title)"></h1>
 
       <!-- Author -->
       <p class="lead">
@@ -26,8 +26,8 @@
       <hr>
 
       <!-- Post Content -->
-      <p class="lead">{{showPostCtrl.artigo.description}}</p>
-
+      <!-- <p class="lead">{{showPostCtrl.artigo.description}}</p> -->
+      <div class="lead" ng-bind-html="showPostCtrl.renderHtml(showPostCtrl.artigo.description)"></div>
       <hr>
 
       <!-- Comments Form -->
