@@ -6,10 +6,10 @@
         <div class="col-md-8">
           <!-- Blog Post -->
           <div class="card mb-4" ng-repeat="article in homeCtrl.articles">
-            <img class="card-img-top" src="http://placehold.it/750x300" alt="Card image cap">
+            <img class="card-img-top" ng-src="{{homeCtrl.getFaceImg(article.image)}}" alt="Card image cap">
             <div class="card-body">
               <h2 class="card-title"> {{article.title}} </h2>
-              <p class="card-text"> {{article.description}} </p>
+              <p class="card-text text-truncate"> {{article.description}}</p>
               <a href="#!/post/{{article._id}}" class="btn btn-primary">Read More &rarr;</a>
             </div>
             <div class="card-footer text-muted">
@@ -108,7 +108,7 @@
 
                 <div class="form-group">
                   <label for="input">Nome</label>
-                  <input type="text" class="form-control " name="name" ng-model="user.name" placeholder="Nome completo" ng-pattern="/^[a-zA-Z]+(([',. -][a-zA-Z ])?[a-zA-Z]*)*$/" required>
+                  <input type="text" class="form-control " name="name" ng-model="user.name" placeholder="Nome completo" ng-pattern="/^(\w+)(?:\s[^\s]+)?\s(\w+).*$/" required>
                   <small ng-show="registerForm.name.$invalid && homeCtrl.submitted" class="form-text text-danger">   
                     Por favor usar nome completo!
                   </small>  

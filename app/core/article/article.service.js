@@ -3,10 +3,10 @@
 angular.module('core.article').
   factory('ArticleService', ['$resource',
     function($resource) {
-      return $resource('phones/:phoneId.json', {}, {
+      return $resource('posts/:pageNumber', {}, {
         query: {
           method: 'GET',
-          params: {phoneId: 'phones'},
+          params: {pageNumber: 'phones'},
           isArray: true
         }
       });
