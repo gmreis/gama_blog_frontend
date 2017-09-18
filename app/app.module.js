@@ -1,7 +1,7 @@
 'use strict';
 
-// Define the `leadingApp` module
-angular.module('leadingApp', [
+// Define the `construcaoBlogApp` module
+angular.module('construcaoBlogApp', [
   'ngRoute',
   'core',
   'homePage',

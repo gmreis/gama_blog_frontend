@@ -1,7 +1,7 @@
 'use strict';
 
 angular.
-  module('leadingApp').
+  module('construcaoBlogApp').
   config(['$locationProvider' ,'$routeProvider',
     function config($locationProvider, $routeProvider) {
       $locationProvider.hashPrefix('!');
@@ -16,17 +16,13 @@ angular.
         otherwise('/home');
     }
   ]).
-  run(function($rootScope, $window) { 
-    $rootScope.$on("$routeChangeStart",function(event, next, current){
-        // Caso o evento do angular seja de alteracao de rota disparar o evento customizado
-        if(next.templateUrl) {
-            // Evento customizado do google tag manager
-            $window.dataLayer.push(
-              {
-                'event': 'routeChange',
-                'virtualPageView': next.templateUrl
-              }
-            );
-        }
+  run(function($rootScope, $window, $location) { 
+    $window.ga('create', 'UA-106574119-1', 'auto');
+    $rootScope.$on('$locationChangeSuccess', function(event) {
+      console.log('locationChangeSuccess');
+      if (!$window.ga){
+        return;
+      }
+      $window.ga('send', 'pageview', { page: $location.path() });
     });
   });
