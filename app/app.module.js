@@ -5,5 +5,6 @@ angular.module('construcaoBlogApp', [
   'ngRoute',
   'core',
   'homePage',
-  'postPage'
+  'postPage',
+  'showpostPage'
 ]);

@@ -4,15 +4,13 @@
 
         <!-- Blog Entries Column -->
         <div class="col-md-8">
-              <!-- <button class="btn btn-primary col-sm-2" ng-click="homeCtrl.getPost()">Salvar token</button> -->
-        
           <!-- Blog Post -->
           <div class="card mb-4" ng-repeat="article in homeCtrl.articles">
             <img class="card-img-top" src="http://placehold.it/750x300" alt="Card image cap">
             <div class="card-body">
               <h2 class="card-title"> {{article.title}} </h2>
               <p class="card-text"> {{article.description}} </p>
-              <a href="#" class="btn btn-primary">Read More &rarr;</a>
+              <a href="#!/post/{{article._id}}" class="btn btn-primary">Read More &rarr;</a>
             </div>
             <div class="card-footer text-muted">
               Por <b>{{article.author}}</b> em {{article.date_create | date:'MM/dd/yyyy'}}
@@ -21,14 +19,33 @@
           </div>
 
           <!-- Pagination -->
-          <ul class="pagination justify-content-center mb-4">
+          <nav aria-label="Page navigation example">
+            <ul class="pagination">
+              <li class="page-item" ng-class="homeCtrl.currentPage == 1 ? 'disabled' : ''">
+                <a class="page-link" href="#" aria-label="Previous">
+                  <span aria-hidden="true">&laquo;</span>
+                  <span class="sr-only">Previous</span>
+                </a>
+              </li>
+              <li class="page-item"><a class="page-link" href="#">1</a></li>
+              <li class="page-item"><a class="page-link" href="#">2</a></li>
+              <li class="page-item"><a class="page-link" href="#">3</a></li>
+              <li class="page-item">
+                <a class="page-link" href="#" aria-label="Next">
+                  <span aria-hidden="true">&raquo;</span>
+                  <span class="sr-only">Next</span>
+                </a>
+              </li>
+            </ul>
+          </nav>
+         <!--  <ul class="pagination justify-content-center mb-4">
             <li class="page-item" ng-class="homeCtrl.currentPage == 1 ? 'disabled' : ''">
               <button class="page-link" ng-click="homeCtrl.getPrevPosts()">&larr; Older</button>
             </li>
             <li class="page-item">
               <button class="page-link" ng-click="homeCtrl.getNextPosts()">Newer &rarr;</button>
             </li>
-          </ul>
+          </ul> -->
 
         </div>
 
@@ -50,7 +67,7 @@
 
           <!-- Categories Widget -->
           <div class="card my-4">
-            <h5 class="card-header">Categories</h5>
+            <h5 class="card-header">Categorias</h5>
             <div class="card-body">
               <div class="row">
                 <div class="col-lg-6">
@@ -87,14 +104,18 @@
           <div class="card my-4">
             <h5 class="card-header">Inscreva-se</h5>
             <div class="card-body">
-              <form>
+              <form class="was-validated" name="SaveForm" novalidate>
+                <div class="form-group">
+                  <label for="input">Nome</label>
+                  <input type="text" class="form-control" name="name"  ng-model="name" placeholder="Nome completo" ng-pattern="/^[a-zA-Z]+(([',. -][a-zA-Z ])?[a-zA-Z]*)*$/" required>
+                  <span style="color:red" ng-show="SaveForm.name.$dirty && SaveForm.name.$invalid" class="ng-hide">   
+                    Please Enter Valid  Name.!  
+                  </span>  
+                </div>
+
                 <div class="form-group">
                   <label for="exampleInputEmail1">Email</label>
                   <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
-                </div>
-                <div class="form-group">
-                  <label for="exampleInputPassword1">Senha</label>
-                  <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Senha">
                 </div>
                 <div class="form-check">
                   <label class="form-check-label">
@@ -102,7 +123,7 @@
                     Check me out
                   </label>
                 </div>
-                <button type="submit" class="btn btn-primary">Submit</button>
+                <button type="submit" class="btn btn-primary">Inscreva-se</button>
               </form>
             </div>
           </div>

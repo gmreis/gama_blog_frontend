@@ -10,6 +10,14 @@ angular.
       function PostPageController($http) {
         var postController = this;
         
+        postController.artigo = {
+          "autor" : '',
+          "title" : '',
+          "conteudo" : '',
+          "imagem" : '',
+          "data" : null
+        };
+
         postController.teste = teste;
 
         function teste() {
