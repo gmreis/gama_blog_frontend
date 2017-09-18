@@ -104,25 +104,24 @@
           <div class="card my-4">
             <h5 class="card-header">Inscreva-se</h5>
             <div class="card-body">
-              <form class="was-validated" name="SaveForm" novalidate>
-                <div class="form-group">
-                  <label for="input">Nome</label>
-                  <input type="text" class="form-control" name="name"  ng-model="name" placeholder="Nome completo" ng-pattern="/^[a-zA-Z]+(([',. -][a-zA-Z ])?[a-zA-Z]*)*$/" required>
-                  <span style="color:red" ng-show="SaveForm.name.$dirty && SaveForm.name.$invalid" class="ng-hide">   
-                    Please Enter Valid  Name.!  
-                  </span>  
-                </div>
+              <form name="registerForm" ng-submit="homeCtrl.registraUser()" novalidate>
 
                 <div class="form-group">
-                  <label for="exampleInputEmail1">Email</label>
-                  <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
+                  <label for="input">Nome</label>
+                  <input type="text" class="form-control " name="name" ng-model="user.name" placeholder="Nome completo" ng-pattern="/^[a-zA-Z]+(([',. -][a-zA-Z ])?[a-zA-Z]*)*$/" required>
+                  <small ng-show="registerForm.name.$invalid && homeCtrl.submitted" class="form-text text-danger">   
+                    Por favor usar nome completo!
+                  </small>  
                 </div>
-                <div class="form-check">
-                  <label class="form-check-label">
-                    <input type="checkbox" class="form-check-input">
-                    Check me out
-                  </label>
+
+                <div class="form-group" ng-class="{ 'has-error' : registerForm.email.$invalid && homeCtrl.submitted}">
+                  <label for="input">Email</label>
+                  <input type="email" class="form-control" name="email" ng-model="user.email" placeholder="contato@gmail.com" required>
+                  <small ng-show="registerForm.email.$invalid && homeCtrl.submitted" class="form-text text-danger">   
+                     Email invalido.
+                  </small>  
                 </div>
+
                 <button type="submit" class="btn btn-primary">Inscreva-se</button>
               </form>
             </div>

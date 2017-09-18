@@ -1,156 +1,152 @@
- <!-- Page Content -->
-    <div class="container">
-        
-      <div class="row">
+<div class="container-fluid">
+    
+  <div class="row">
 
-        <!-- Post Content Column -->
-        <div class="col-lg-8">
+    <!-- Post Content Column -->
+    <div class="col-lg-8">
 
-          <!-- Title -->
-          <h1 class="mt-4">{{showPostCtrl.artigo.title}}</h1>
+      <!-- Title -->
+      <h1 class="mt-4">{{showPostCtrl.artigo.title}}</h1>
 
-          <!-- Author -->
-          <p class="lead">
-            Por
-            <b>{{showPostCtrl.artigo.author}}</b>
-          </p>
+      <!-- Author -->
+      <p class="lead">
+        Por
+        <b>{{showPostCtrl.artigo.author}}</b>
+      </p>
 
-          <hr>
+      <hr>
 
-          <!-- Date/Time -->
-          <p>Postado em {{showPostCtrl.artigo.date_create | date:'dd/MM/yyyy hh:mm a'}}</p>
+      <!-- Date/Time -->
+      <p>Postado em {{showPostCtrl.artigo.date_create | date:'dd/MM/yyyy hh:mm a'}}</p>
 
-          <hr>
+      <hr>
+      <!-- Preview Image -->
+      <img class="img-fluid rounded" src="../img/{{showPostCtrl.artigo.img}}" alt="">
 
-          <!-- Preview Image -->
-          <img class="img-fluid rounded" src="http://placehold.it/900x300" alt="">
+      <hr>
 
-          <hr>
+      <!-- Post Content -->
+      <p class="lead">{{showPostCtrl.artigo.description}}</p>
 
-          <!-- Post Content -->
-          <p class="lead">{{showPostCtrl.artigo.description}}</p>
+      <hr>
 
-          <hr>
-
-          <!-- Comments Form -->
-          <div class="card my-4">
-            <h5 class="card-header">Leave a Comment:</h5>
-            <div class="card-body">
-              <form>
-                <div class="form-group">
-                  <textarea class="form-control" rows="3"></textarea>
-                </div>
-                <button type="submit" class="btn btn-primary">Submit</button>
-              </form>
+      <!-- Comments Form -->
+      <div class="card my-4">
+        <h5 class="card-header">Leave a Comment:</h5>
+        <div class="card-body">
+          <form>
+            <div class="form-group">
+              <textarea class="form-control" rows="3"></textarea>
             </div>
-          </div>
-
-          <!-- Single Comment -->
-          <div class="media mb-4">
-            <img class="d-flex mr-3 rounded-circle" src="http://placehold.it/50x50" alt="">
-            <div class="media-body">
-              <h5 class="mt-0">Commenter Name</h5>
-              Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis in faucibus.
-            </div>
-          </div>
-
-          <!-- Comment with nested comments -->
-          <div class="media mb-4">
-            <img class="d-flex mr-3 rounded-circle" src="http://placehold.it/50x50" alt="">
-            <div class="media-body">
-              <h5 class="mt-0">Commenter Name</h5>
-              Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis in faucibus.
-
-              <div class="media mt-4">
-                <img class="d-flex mr-3 rounded-circle" src="http://placehold.it/50x50" alt="">
-                <div class="media-body">
-                  <h5 class="mt-0">Commenter Name</h5>
-                  Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis in faucibus.
-                </div>
-              </div>
-
-              <div class="media mt-4">
-                <img class="d-flex mr-3 rounded-circle" src="http://placehold.it/50x50" alt="">
-                <div class="media-body">
-                  <h5 class="mt-0">Commenter Name</h5>
-                  Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis in faucibus.
-                </div>
-              </div>
-
-            </div>
-          </div>
-
+            <button type="submit" class="btn btn-primary">Submit</button>
+          </form>
         </div>
-
-        <!-- Sidebar Widgets Column -->
-        <div class="col-md-4">
-          <!-- Categories Widget -->
-          <div class="card my-4">
-            <h5 class="card-header">Categories</h5>
-            <div class="card-body">
-              <div class="row">
-                <div class="col-lg-6">
-                  <ul class="list-unstyled mb-0">
-                    <li>
-                      <a href="#">Web Design</a>
-                    </li>
-                    <li>
-                      <a href="#">HTML</a>
-                    </li>
-                    <li>
-                      <a href="#">Freebies</a>
-                    </li>
-                  </ul>
-                </div>
-                <div class="col-lg-6">
-                  <ul class="list-unstyled mb-0">
-                    <li>
-                      <a href="#">JavaScript</a>
-                    </li>
-                    <li>
-                      <a href="#">CSS</a>
-                    </li>
-                    <li>
-                      <a href="#">Tutorials</a>
-                    </li>
-                  </ul>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <!-- Side Widget -->
-          <div class="card my-4">
-            <h5 class="card-header">Inscreva-se</h5>
-            <div class="card-body">
-              <form class="was-validated" name="SaveForm" novalidate>
-                <div class="form-group">
-                  <label for="input">Nome</label>
-                  <input type="text" class="form-control" name="name"  ng-model="name" placeholder="Nome completo" ng-pattern="/^[a-zA-Z]+(([',. -][a-zA-Z ])?[a-zA-Z]*)*$/" required>
-                  <span style="color:red" ng-show="SaveForm.name.$dirty && SaveForm.name.$invalid" class="ng-hide">   
-                    Please Enter Valid  Name.!  
-                  </span>  
-                </div>
-
-                <div class="form-group">
-                  <label for="exampleInputEmail1">Email</label>
-                  <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
-                </div>
-                <div class="form-check">
-                  <label class="form-check-label">
-                    <input type="checkbox" class="form-check-input">
-                    Check me out
-                  </label>
-                </div>
-                <button type="submit" class="btn btn-primary">Inscreva-se</button>
-              </form>
-            </div>
-          </div>
-
-        </div>
-
       </div>
-      <!-- /.row -->
+
+      <!-- Single Comment -->
+      <div class="media mb-4">
+        <img class="d-flex mr-3 rounded-circle" src="http://placehold.it/50x50" alt="">
+        <div class="media-body">
+          <h5 class="mt-0">Commenter Name</h5>
+          Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis in faucibus.
+        </div>
+      </div>
+
+      <!-- Comment with nested comments -->
+      <div class="media mb-4">
+        <img class="d-flex mr-3 rounded-circle" src="http://placehold.it/50x50" alt="">
+        <div class="media-body">
+          <h5 class="mt-0">Commenter Name</h5>
+          Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis in faucibus.
+
+          <div class="media mt-4">
+            <img class="d-flex mr-3 rounded-circle" src="http://placehold.it/50x50" alt="">
+            <div class="media-body">
+              <h5 class="mt-0">Commenter Name</h5>
+              Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis in faucibus.
+            </div>
+          </div>
+
+          <div class="media mt-4">
+            <img class="d-flex mr-3 rounded-circle" src="http://placehold.it/50x50" alt="">
+            <div class="media-body">
+              <h5 class="mt-0">Commenter Name</h5>
+              Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis in faucibus.
+            </div>
+          </div>
+
+        </div>
+      </div>
 
     </div>
-    <!-- /.container -->
+
+    <!-- Sidebar Widgets Column -->
+    <div class="col-md-4">
+      <!-- Categories Widget -->
+      <div class="card my-4">
+        <h5 class="card-header">Categories</h5>
+        <div class="card-body">
+          <div class="row">
+            <div class="col-lg-6">
+              <ul class="list-unstyled mb-0">
+                <li>
+                  <a href="#">Web Design</a>
+                </li>
+                <li>
+                  <a href="#">HTML</a>
+                </li>
+                <li>
+                  <a href="#">Freebies</a>
+                </li>
+              </ul>
+            </div>
+            <div class="col-lg-6">
+              <ul class="list-unstyled mb-0">
+                <li>
+                  <a href="#">JavaScript</a>
+                </li>
+                <li>
+                  <a href="#">CSS</a>
+                </li>
+                <li>
+                  <a href="#">Tutorials</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Side Widget -->
+      <div class="card my-4">
+        <h5 class="card-header">Inscreva-se</h5>
+        <div class="card-body">
+          <form name="registerForm2" ng-submit="showPostCtrl.registraUser()" novalidate>
+
+            <div class="form-group">
+              <label for="input">Nome</label>
+              <input type="text" class="form-control " name="name" ng-model="user.name" placeholder="Nome completo" ng-pattern="/^[a-zA-Z]+(([',. -][a-zA-Z ])?[a-zA-Z]*)*$/" required>
+              <small ng-show="registerForm2.name.$invalid && showPostCtrl.submitted" class="form-text text-danger">   
+                Por favor usar nome completo!
+              </small>  
+            </div>
+
+            <div class="form-group" ng-class="{ 'has-error' : registerForm2.email.$invalid && showPostCtrl.submitted}">
+              <label for="input">Email</label>
+              <input type="email" class="form-control" name="email" ng-model="user.email" placeholder="contato@gmail.com" required>
+              <small ng-show="registerForm2.email.$invalid && showPostCtrl.submitted" class="form-text text-danger">   
+                 Email invalido.
+              </small>  
+            </div>
+
+            <button type="submit" class="btn btn-primary">Inscreva-se</button>
+          </form>
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+  <!-- /.row -->
+
+</div>

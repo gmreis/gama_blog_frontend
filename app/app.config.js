@@ -11,7 +11,7 @@ angular.
           template: '<home-page></home-page>'
         }).
         when('/novopost', {
-          template: '<showpost-page></showpost-page>'
+          template: '<post-page></post-page>'
         }).
         when('/post/:postId', {
           template: '<showpost-page></showpost-page>'

@@ -11,12 +11,18 @@ angular.
         var self = this;
 
         self.postId = $routeParams.postId;
-
+        self.submitted = false;
         self.artigo = "";
 
+        self.registraUser = registraUser;
         self.getPost = getPost;
+        
         self.teste = teste;
         getPost(self.postId);
+
+        function registraUser() {
+          self.submitted = true;
+        }
 
         function getPost(id) {
           const api = 'https://skyfall-blog-dev.mybluemix.net/api/posts/find/';
@@ -24,18 +30,8 @@ angular.
           //Busca post no servidor
           $http.get(api+id).then(function(response) {
             self.artigo = response.data;
-                console.log("te "+JSON.stringify(response.data));
-            
-            if(response.status === 200){
-              if(response.data.length > 0){
-                console.log("te "+response.data.length);
-              }else{
-                console.log("te "+response.data.length);
-                console.log("te "+JSON.stringify(response.data));
-              }
-            }else{
-              console.log("te "+self.currentPage);
-            }
+            self.artigo.img = "blog_post_01.png"
+           
           }, function(response) {
             console.log("Error ");
           });

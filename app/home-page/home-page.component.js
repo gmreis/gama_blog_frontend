@@ -14,13 +14,20 @@ angular.
 
         self.currentPage = 1;
         self.hasNext = false;
+        self.submitted = false;
 
         self.getPost = getPost;
+        self.registraUser = registraUser;
+
         self.getNextPosts = getNextPosts;
         self.getPrevPosts = getPrevPosts;
 
         self.teste = teste;
         getPost(self.currentPage);
+
+        function registraUser() {
+          self.submitted = true;
+        }
 
         function getPost(pageNumber) {
           const api = 'https://skyfall-blog-dev.mybluemix.net/api/posts/';
@@ -30,13 +37,9 @@ angular.
             self.articles = response.data;
             if(response.status === 200){
               if(response.data.length > 0){
-                console.log("te "+response.data.length);
               }else{
-                console.log("te "+response.data.length);
-                console.log("te "+JSON.stringify(response.data));
               }
             }else{
-              console.log("te "+self.currentPage);
             }
           }, function(response) {
             console.log("Error ");
