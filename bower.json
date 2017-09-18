@@ -7,7 +7,8 @@
     "angular-mocks": "1.5.x",
     "angular-resource": "1.5.x",
     "angular-route": "1.5.x",
-    "bootstrap": "3.3.x",
-    "jquery": "2.2.x"
+    "bootstrap": "v4.0.0-beta",
+    "jquery": "2.2.x",
+    "popper.js": "^1.12.5"
   }
 }

@@ -19,7 +19,7 @@ angular.
   run(function($rootScope, $window, $location) { 
     $window.ga('create', 'UA-106574119-1', 'auto');
     $rootScope.$on('$locationChangeSuccess', function(event) {
-      console.log('locationChangeSuccess');
+      // console.log('locationChangeSuccess');
       if (!$window.ga){
         return;
       }
