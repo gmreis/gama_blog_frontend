@@ -291,8 +291,8 @@ footer {
 .btn:focus {
   outline: none; }
 
-.card {
-  height: 100%;
+.lead{
+  text-align: justify;!important
 }
 
 /*.ng-invalid{   
