@@ -1,10 +1,63 @@
- <header class="masthead">
-      <div class="header-content">
-        <div class="header-content-inner">
-          <h1 id="homeHeading">Your Favorite Source of Free Bootstrap Themes</h1>
-          <hr>
-          <p>Start Bootstrap can help you build better websites using the Bootstrap CSS framework! Just download your template and start going, no strings attached!</p>
-          <a class="btn btn-primary btn-xl js-scroll-trigger" href="#about">Find Out More</a>
-        </div>
+<header class="masthead">
+  <div class="header-content">
+    <div class="header-content-inner">
+      <h1 id="homeHeading">Your Favorite Source of Free Bootstrap Themes</h1>
+      <hr>
+      <p>Start Bootstrap can help you build better websites using the Bootstrap CSS framework! Just download your template and start going, no strings attached!</p>
+      <a class="btn btn-primary btn-xl js-scroll-trigger" href="#about">Find Out More</a>
+    </div>
+  </div>
+</header>
+
+<!-- Contact Section -->
+<section id="contact">
+  <div class="container">
+    <h2 class="text-center">Entre em contato</h2>
+    <hr class="star-primary">
+    <div class="row">
+      <div class="col-lg-8 mx-auto">
+        <form name="registerForm" ng-submit="contatoCtrl.registraUser()" novalidate>   
+             <div class="form-group" ng-class="{ 'has-error' : registerForm.name.$invalid && contatoCtrl.submitted}">    
+              <label for="input">Nome</label>   
+              <input type="text" class="form-control " name="name" ng-model="contatoCtrl.user.name" placeholder="Nome completo" ng-pattern="/^(\w+)(?:\s[^\s]+)?\s(\w+).*$/" required>    
+              <small ng-show="registerForm.name.$invalid && contatoCtrl.submitted" class="form-text text-danger">
+	              Por favor usar nome completo!   
+              </small>      
+            </div>    
+            <div class="form-group" ng-class="{ 'has-error' : registerForm.email.$invalid && contatoCtrl.submitted}">
+              <label for="input">Email</label>    
+              <input type="email" class="form-control" name="email" ng-model="contatoCtrl.user.email" placeholder="contato@empresa.com" required>   
+              <small ng-show="registerForm.email.$invalid && contatoCtrl.submitted" class="form-text text-danger">
+                  Por favor usar email valido!     
+              </small>      
+            </div>    
+            <button type="submit" class="btn btn-primary">Enviar</button>    
+          </form>
       </div>
-    </header>
+    </div>
+  </div>
+</section>
+
+ <!-- About Section -->
+<section class="success" id="about">
+  <div class="container">
+    <h2 class="text-center">About</h2>
+    <hr class="star-light">
+    <div class="row">
+      <div class="col-lg-4 ml-auto">
+        <p>Freelancer is a free bootstrap theme created by Start Bootstrap. The download includes the complete source files including HTML, CSS, and JavaScript as well as optional LESS stylesheets for easy customization.</p>
+      </div>
+      <div class="col-lg-4 mr-auto">
+        <p>Whether you're a student looking to showcase your work, a professional looking to attract clients, or a graphic artist looking to share your projects, this template is the perfect starting point!</p>
+      </div>
+      <div class="col-lg-8 mx-auto text-center">
+        <a href="#" class="btn btn-lg btn-outline">
+          <i class="fa fa-download"></i>
+          Download Theme
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+

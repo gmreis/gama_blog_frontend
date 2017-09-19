@@ -9,11 +9,13 @@ angular.
     controller: ['$http','$routeParams', '$sce',
       function ShowPostPageController($http, $routeParams, $sce) {
         var self = this;
-
+        //Varivaveis
         self.postId = $routeParams.postId;
         self.submitted = false;
         self.artigo = "";
+        self.user = null;
 
+        //Declarcao de metodos
         self.renderHtml = renderHtml;
         self.registraUser = registraUser;
         self.getPost = getPost;
@@ -30,6 +32,27 @@ angular.
 
         function registraUser() {
           self.submitted = true;
+
+          if(self.user && self.user.name && self.user.email){
+            const api = 'https://skyfall-blog-dev.mybluemix.net/api/leads';
+            var data = (self.user);
+            var config = {
+              headers : {
+                'Content-Type': 'application/json'
+              }
+            }
+
+            //Busca post no servidor
+            $http.post(api, data, config).then(function(response) {
+              if(response.status === 201 || response.status === 200){
+                $location.path('/obrigado').replace();
+              }else{
+                console.log("Error status:"+response.status);
+              }
+            }, function(response) {
+              console.log("Error ");
+            });
+          }
         }
 
         function getPost(id) {

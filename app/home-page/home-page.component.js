@@ -10,14 +10,16 @@ angular.
       function HomePageController($http, $sce, $location) {
         var self = this;
 
+        //Variaveis
         self.articles = [];
-        //Registro Lead
         self.user = null;
 
+        //Paginacao
         self.currentPage = 1;
         self.hasNext = false;
         self.submitted = false;
 
+        //Declaracao dos metodos
         self.getPost = getPost;
         self.registraUser = registraUser;
         self.getFaceImg = getFaceImg
@@ -32,7 +34,7 @@ angular.
         function registraUser() {
           self.submitted = true;
 
-          if(self.user){
+          if(self.user && self.user.name && self.user.email){
             const api = 'https://skyfall-blog-dev.mybluemix.net/api/leads';
             var data = (self.user);
             var config = {
@@ -42,8 +44,8 @@ angular.
             }
 
             //Busca post no servidor
-            $http.post(api, data).then(function(response) {
-              if(response.status === 200){
+            $http.post(api, data, config).then(function(response) {
+              if(response.status === 201 || response.status === 200){
                 $location.path('/obrigado').replace();
               }else{
                 console.log("Error status:"+response.status);

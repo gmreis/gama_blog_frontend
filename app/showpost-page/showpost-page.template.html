@@ -1,20 +1,15 @@
 <div class="container">
-    
   <div class="row">
-
     <!-- Post Content Column -->
     <div class="col-lg-8 col-md-10 mx-auto">
-
       <!-- Title -->
       <h1 class="mt-4" ng-bind-html="showPostCtrl.renderHtml(showPostCtrl.artigo.title)"></h1>
-
       <!-- Author -->
       <p>
         Por
         <strong>{{showPostCtrl.artigo.author}}</strong>
         em {{showPostCtrl.artigo.date_create | date:'dd/MM/yyyy hh:mm a'}}
       </p>
-
       <hr>
       <!-- Preview Image -->
       <img class="img-fluid rounded" src="../img/{{showPostCtrl.artigo.img}}" alt="">
@@ -25,9 +20,32 @@
       <hr>
 
     </div>
-
-
   </div>
   <!-- /.row -->
+</div>
 
+<!-- Contact Section -->
+<div class="container">
+  <h2 class="text-center">Entre em contato</h2>
+  <hr class="star-primary">
+  <div class="row">
+    <div class="col-lg-8 mx-auto">
+      <form name="registerForm" ng-submit="showPostCtrl.registraUser()" novalidate>   
+           <div class="form-group" ng-class="{ 'has-error' : registerForm.name.$invalid && showPostCtrl.submitted}">    
+            <label for="input">Nome</label>   
+            <input type="text" class="form-control " name="name" ng-model="user.name" placeholder="Nome completo" ng-pattern="/^(\w+)(?:\s[^\s]+)?\s(\w+).*$/" required>    
+            <small ng-show="registerForm.name.$invalid && showPostCtrl.submitted" class="form-text text-danger">      Por favor usar nome completo!   
+            </small>      
+          </div>    
+          <div class="form-group" ng-class="{ 'has-error' : registerForm.email.$invalid && showPostCtrl.submitted}">
+            <label for="input">Email</label>    
+            <input type="email" class="form-control" name="email" ng-model="user.email" placeholder="contato@gmail.com" required>   
+            <small ng-show="registerForm.email.$invalid && showPostCtrl.submitted" class="form-text text-danger">
+                Por favor usar email valido!     
+            </small>      
+          </div>    
+          <button type="submit" class="btn btn-primary">Inscreva-se</button>    
+        </form>
+    </div>
+  </div>
 </div>

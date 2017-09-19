@@ -9,12 +9,6 @@ angular.
     controller: ['$http',
       function ObrigadoPageController($http) {
         self = this;
-        
-        self.teste = teste;
-
-        function teste() {
-          console.log(" Eu funciono!")
-        };
       }
     ]
   });

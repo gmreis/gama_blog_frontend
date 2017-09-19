@@ -32,47 +32,10 @@
     </nav>
 
      
-    <section id="home">
-        <!-- Main Content -->
-        <div class="container">
-          <div ng-view class="view-frame"></div>
-        </div>
-    </section>
-
-    <!-- Contact Section -->
-    <section id="contact">
-      <div class="container">
-        <hr class="star-primary">
-        <h2 class="text-center">Contact Me</h2>
-        <div class="row">
-          <div class="col-lg-8 mx-auto">
-            <!-- To configure the contact form email address, go to mail/contact_me.php and update the email address in the PHP file on line 19. -->
-            <!-- The form should work on most web servers, but if the form is not working you may need to configure your web server differently. -->
-            <form name="sentMessage" id="contactForm" novalidate>
-              <div class="control-group">
-                <div class="form-group floating-label-form-group controls">
-                  <label>Name</label>
-                  <input class="form-control" id="name" type="text" placeholder="Name" required data-validation-required-message="Please enter your name.">
-                  <p class="help-block text-danger"></p>
-                </div>
-              </div>
-              <div class="control-group">
-                <div class="form-group floating-label-form-group controls">
-                  <label>Email Address</label>
-                  <input class="form-control" id="email" type="email" placeholder="Email Address" required data-validation-required-message="Please enter your email address.">
-                  <p class="help-block text-danger"></p>
-                </div>
-              </div>
-              <br>
-              <div id="success"></div>
-              <div class="form-group">
-                <button type="submit" class="btn btn-success btn-lg" id="sendMessageButton">Send</button>
-              </div>
-            </form>
-          </div>
-        </div>
-      </div>
-    </section>
+    <!-- Main Content -->
+    <div class="container">
+      <div ng-view class="view-frame"></div>
+    </div>
 
     <!-- Footer -->
     <footer class="py-5 bg-dark">
@@ -130,6 +93,12 @@
     <script src="core/core.module.js"></script>
     <script src="core/article/article.module.js"></script>
     <script src="core/article/article.service.js"></script>
+
+     <!-- Contact Form JavaScript --><!-- 
+    <script src="external-js/contact_me.js"></script>
+    <script src="external-js/jqBootstrapValidation.js"></script>
+    <script src="external-js/freelancer.js"></script> -->
+
     <!-- Global Site Tag (gtag.js) - Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-106574119-1"></script>
     <script>
