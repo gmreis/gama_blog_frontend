@@ -71,7 +71,7 @@ angular.
           //const api = 'localhost:3000/api/posts/';
           //Busca post no servidor
           $http.get(api+pageNumber).then(function(response) {
-            self.articles = response.data;
+            self.articles = response.data.rows;
             if(response.status === 200){
               if(response.data.length > 0){
               }else{
