@@ -6,11 +6,13 @@ angular.
   component('homePage', {
     templateUrl: 'home-page/home-page.template.html',
     controllerAs: "homeCtrl",
-    controller: ['$http', '$sce',
-      function HomePageController($http, $sce) {
+    controller: ['$http', '$sce', '$location',
+      function HomePageController($http, $sce, $location) {
         var self = this;
 
         self.articles = [];
+        //Registro Lead
+        self.user = null;
 
         self.currentPage = 1;
         self.hasNext = false;
@@ -29,6 +31,27 @@ angular.
 
         function registraUser() {
           self.submitted = true;
+
+          if(self.user){
+            const api = 'https://skyfall-blog-dev.mybluemix.net/api/leads';
+            var data = (self.user);
+            var config = {
+              headers : {
+                'Content-Type': 'application/json'
+              }
+            }
+
+            //Busca post no servidor
+            $http.post(api, data).then(function(response) {
+              if(response.status === 200){
+                $location.path('/obrigado').replace();
+              }else{
+                console.log("Error status:"+response.status);
+              }
+            }, function(response) {
+              console.log("Error ");
+            });
+          }
         }
 
         function renderHtml(texto) {
@@ -79,7 +102,7 @@ angular.
 
         function teste() {
 
-          console.log("Eu funciono! ");
+          console.log("Eu funciono! "+JSON.stringify(self.user))
         };
       }
     ]
