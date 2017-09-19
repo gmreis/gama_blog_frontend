@@ -6,9 +6,14 @@ angular.
   component('obrigadoPage', {
     templateUrl: 'obrigado-page/obrigado-page.template.html',
     controllerAs: 'obrigadoCtrl',
-    controller: ['$http',
+    controller: ['$http', 
       function ObrigadoPageController($http) {
         self = this;
+        self.login = false;
+
+        if(localStorage.getItem("hasSubscribe") === "true"){
+             self.login = true;
+        } 
       }
     ]
   });
