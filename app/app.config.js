@@ -10,11 +10,14 @@ angular.
         when('/home', {
           template: '<home-page></home-page>'
         }).
-        when('/novopost', {
-          template: '<post-page></post-page>'
-        }).
         when('/post/:postId', {
           template: '<showpost-page></showpost-page>'
+        }).
+        when('/obrigado', {
+          template: '<obrigado-page></obrigado-page>'
+        }).
+        when('/contato', {
+          template: '<contato-page></contato-page>'
         }).
         otherwise('/home');
     }
