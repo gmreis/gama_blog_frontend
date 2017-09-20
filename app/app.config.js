@@ -16,6 +16,9 @@ angular.
         when('/obrigado', {
           template: '<obrigado-page></obrigado-page>'
         }).
+        when('/inscrito', {
+          template: '<inscrito-page></inscrito-page>'
+        }).
         when('/contato', {
           template: '<contato-page></contato-page>'
         }).

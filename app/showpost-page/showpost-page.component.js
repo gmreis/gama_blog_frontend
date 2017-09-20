@@ -46,7 +46,7 @@ angular.
             $http.post(api, data, config).then(function(response) {
               if(response.status === 201 || response.status === 200){
                 localStorage.setItem("hasSubscribe", true);
-                $location.path('/obrigado').replace();
+                $location.path('/inscrito').replace();
               }else{
                 console.log("Error status:"+response.status);
               }

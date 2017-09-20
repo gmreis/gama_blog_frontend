@@ -26,6 +26,12 @@ h6 {
   font-family: 'Montserrat', 'Helvetica Neue', Helvetica, Arial, sans-serif;
   font-weight: 700; }
 
+hr.small-light {
+  border-color: white; 
+  max-width: 50px;
+  border-width: 3px;
+  border-color: #F05F40;
+}
 hr.star-light,
 hr.star-primary {
   max-width: 250px;
@@ -293,6 +299,10 @@ footer {
 
 .lead{
   text-align: justify;!important
+}
+.btn-primary{
+  background-color : #f25e3a;!important;
+  border-color : #f25e3a;!important
 }
 
 /*.ng-invalid{   

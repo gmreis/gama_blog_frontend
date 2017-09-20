@@ -7,5 +7,6 @@ angular.module('construcaoBlogApp', [
   'homePage',
   'contatoPage',
   'showpostPage',
-  'obrigadoPage'
+  'obrigadoPage',
+  'inscritoPage'
 ]);
