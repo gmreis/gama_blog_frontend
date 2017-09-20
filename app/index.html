@@ -36,7 +36,6 @@
     <div class="container">
       <div ng-view class="view-frame"></div>
     </div>
-
     <!-- Footer -->
     <footer class="py-5 bg-dark">
         <div class="container">
@@ -44,7 +43,7 @@
                 <div class="col-lg-8 col-md-10 mx-auto">
                     <ul class="list-inline text-center">
                         <li class="list-inline-item">
-                            <a href="http://facebook.com/blogadaconstrucao" target="_blank">
+                            <a class="footer-custom" href="http://facebook.com/blogadaconstrucao" target="_blank">
                                 <span class="fa-stack fa-lg">
                                     <i class="fa fa-circle fa-stack-2x"></i>
                                     <i class="fa fa-facebook fa-stack-1x fa-inverse"></i>
@@ -52,7 +51,10 @@
                             </a>
                         </li>
                     </ul>
-                    <p class="m-0 text-center text-white">Copyright &copy; <a href="https://www.facebook.com/blogdaconstrucao/">Blog da Construção</a></p>
+                    <p class="m-0 text-center text-white">Copyright &copy; 
+                        <!-- <a href="https://www.facebook.com/blogdaconstrucao/">Blog da Construção</a> -->
+                        <a class="footer-custom" href="#!/infografico">Blog da Construção</a>
+                    </p>
                 </div>
             </div>
         </div>
@@ -79,6 +81,8 @@
     <script src="admin/login-page/login-page.component.js"></script>
     <script src="admin/artigos-page/artigos-page.module.js"></script>
     <script src="admin/artigos-page/artigos-page.component.js"></script>
+    <script src="admin/edit-page/edit-page.module.js"></script>
+    <script src="admin/edit-page/edit-page.component.js"></script>
 
     <!-- Global Site Tag (gtag.js) - Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-106574119-1"></script>

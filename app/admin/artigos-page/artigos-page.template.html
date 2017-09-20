@@ -1,14 +1,12 @@
-<div class="container">
-  <div class="row justify-content-end">
-      <button type="button" class="btn btn-dark btn-sm" ng-click="artigosCtrl.novoArtigo()">Novo</a>
-      <button type="button" class="btn btn-dark btn-sm" ng-click="artigosCtrl.logout()">Logout</a>
-  </div>
+<div class="row justify-content-end">
+    <a href="#!/admin/artigos/novo" class="btn btn-primary" role="button" aria-pressed="true">Novo</a>
+    <a href="#!/admin" class="btn btn-primary" role="button" aria-pressed="true">Logout</a>
 </div>
 <div class="row justify-content-md-center">
   <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
     <div class="post-preview" ng-repeat="artigo in artigosCtrl.artigos">
       <a href="" ng-click="artigosCtrl.deleteArticle(artigo._id)" style="float:left;color:red">X</a>
-      <a href="" ng-click="artigosCtrl.editArticle(artigo._id)" style="float:right;color:green">Edit</a>
+      <a href="#!/admin/artigos/{{artigo._id}}" style="float:right;color:green">Edit</a>
       <br/>
       <h4 class="post-title">
           {{artigo.title}}

@@ -15,12 +15,12 @@ angular.
         self.login = login;
 
         if(localStorage.getItem("userData")){
-             $location.path('/artigos').replace();
+             $location.path('/admin/artigos').replace();
         } 
 
         function login() {
-          if(self.userData && self.userData.name && self.userData.senha){
-            const api = 'https://skyfall-blog-dev.mybluemix.net/api/leads';
+          if(self.userData && self.userData.login && self.userData.pass){
+            const api = 'https://skyfall-blog-dev.mybluemix.net/api/users/authenticate';
             var data = (self.userData);
             var config = {
               headers : {
@@ -31,7 +31,10 @@ angular.
             //Authentica usuario no servidor
             $http.post(api, data, config).then(function(response) {
               if(response.status === 201 || response.status === 200){
-                localStorage.setItem("userData", response.data);
+                var dadosUsuario = response.data.user;
+                dadosUsuario.token = response.data.token;
+                localStorage.setItem("userData", dadosUsuario);
+                $location.path('/admin/artigos').replace();
               }else{
                 console.log("Error status:"+response.status);
               }

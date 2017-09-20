@@ -62,8 +62,6 @@ angular.
           //Busca post no servidor
           $http.get(api+id).then(function(response) {
             self.artigo = response.data;
-            self.artigo.img = "blog_post_01.png"
-           
           }, function(response) {
             console.log("Error ");
           });

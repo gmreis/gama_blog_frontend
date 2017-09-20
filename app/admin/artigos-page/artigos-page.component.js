@@ -12,22 +12,17 @@ angular.
         self.artigos = [];
 
         if(!localStorage.getItem("userData")){
-             $location.path('/home').replace();
+          // $location.path('/home').replace();
         } 
 
         //Declarcao de metodos
-        self.logout = logout;
         self.deleteArtigo = deleteArtigo;
-        self.updateArtigo = updateArtigo;
-        self.novoArtigo = novoArtigo;
         self.getArtigos = getArtigos
 
-        getArtigos();
-
-        const api = 'https://skyfall-blog-dev.mybluemix.net/api/';
+        getArtigos(1);
 
         function deleteArtigo(postID) {
-          $http.delete(api+"posts/"+postID).then(function(response) {
+          $http.delete('https://skyfall-blog-dev.mybluemix.net/api/posts/'+postID).then(function(response) {
             if(response.status === 201 || response.status === 200){
               // console.log("Sucesso "+response.status);
               self.getArtigos();
@@ -39,21 +34,8 @@ angular.
           });
         }
 
-        function updateArtigo(id) {
-           $location.path('/admin/artigos/'+id).replace();
-        }
-
-        function novoArtigo() {
-          $location.path('/admin/artigos/novo').replace();
-        }
-
-        function logout() {
-          localStorage.removeItem("userData");
-          $location.path('/home').replace();
-        }
-
         function getArtigos(pageNumber) {
-          $http.get(api+"posts/"+pageNumber).then(function(response) {
+          $http.get('https://skyfall-blog-dev.mybluemix.net/api/posts/'+pageNumber).then(function(response) {
             self.artigos = response.data.rows;
             if(response.status === 201 || response.status === 200){
               // console.log("Sucesso "+response.status);

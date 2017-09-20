@@ -28,6 +28,9 @@ angular.
         when('/admin/artigos', {
           template: '<artigos-page></artigos-page>'
         }).
+        when('/admin/artigos/:artigoId', {
+          template: '<edit-page></edit-page>'
+        }).
         otherwise('/home');
     }
   ]).

@@ -57,9 +57,13 @@ angular.
           }
         }
 
-        function renderHtml(texto) {
+        function renderHtml(texto, subtitle) {
           if(texto){
-             return $sce.trustAsHtml(texto);
+            if(subtitle){
+              texto = texto.replace(/<{1}[^<>]{1,}>{1}/g," ")
+            }
+
+            return $sce.trustAsHtml(texto);
           }
           return "";
         }

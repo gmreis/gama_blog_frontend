@@ -1,0 +1,29 @@
+  <div class="col-lg-8 col-md-10 mx-auto">
+    <form name="registerForm" ng-submit="editCtrl.updatePost()" novalidate>   
+      <a href="#!/admin/artigos" class="btn btn-primary" role="button" aria-pressed="true">Voltar</a>
+      <button type="submit" class="btn btn-primary">{{editCtrl.postNovo ? 'Salvar' : 'Editar'}}</button>    
+      <div class="form-group">    
+        <label for="input">Autor</label>   
+        <input type="text" class="form-control " name="name" ng-model="editCtrl.post.author" required>      
+      </div>    
+      <div class="form-group">    
+        <label for="input">Titulo</label>   
+        <input type="text" class="form-control " name="name" ng-model="editCtrl.post.title" required>      
+      </div>
+      <div class="form-group">    
+        <label for="input">Imagem</label>   
+        <input type="text" class="form-control " name="name" ng-model="editCtrl.post.image" required>      
+      </div> 
+      <div class="form-group">    
+        <label for="input">Keys</label>   
+        <input type="text" class="form-control " name="name" ng-model="editCtrl.post.keys" required>      
+      </div>
+      <div class="form-group">    
+        <label for="input">Conteudo</label>   
+        <textarea rows="20"  class="form-control " name="name" ng-model="editCtrl.post.description" required>      
+      </div>    
+       <div class="form-group">    
+      </div>
+    </form>
+  </div>
+</div>

@@ -9,5 +9,6 @@ angular.module('construcaoBlogApp', [
   'obrigadoPage',
   'inscritoPage',
   'loginPage',
-  'artigosPage'
+  'artigosPage',
+  'editPage'
 ]);

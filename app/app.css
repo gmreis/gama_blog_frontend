@@ -14,7 +14,7 @@ a.active,
 a:active,
 a:focus,
 a:hover {
-  color: #12579c;
+  color: #333333;
   outline: none; }
 
 h1,
@@ -56,7 +56,7 @@ hr.star-light {
 
 hr.star-light:after {
   color: white;
-  background-color: #12579c; }
+  background-color: #333333; }
 
 hr.star-primary {
   border-color: #2C3E50; }
@@ -76,7 +76,7 @@ section {
 
 section.success {
   color: white;
-  background: #12579c; }
+  background: #333333; }
 
 @media (max-width: 767px) {
   section {
@@ -112,7 +112,7 @@ header.masthead {
   padding-bottom: 50px;
   text-align: center;
   color: white;
-  background: #12579c; }
+  background: #333333; }
   header.masthead img {
     display: block;
     margin: 0 auto 20px; }
@@ -176,7 +176,7 @@ header.masthead {
   opacity: 1; }
 
 .floating-label-form-group-with-focus label {
-  color: #12579c; }
+  color: #333333; }
 
 form .row:first-child .floating-label-form-group {
   border-top: 1px solid #eeeeee; }
@@ -202,7 +202,7 @@ footer {
   border: solid 2px white;
   background: transparent; }
   .btn-outline.active, .btn-outline:active, .btn-outline:focus, .btn-outline:hover {
-    color: #12579c;
+    color: #333333;
     border: solid 2px white;
     background: white; }
 
@@ -247,8 +247,8 @@ footer {
 .btn-success {
   font-weight: 700;
   color: white;
-  border-color: #12579c;
-  background-color: #12579c; }
+  border-color: #333333;
+  background-color: #333333; }
   .btn-success.focus, .btn-success:focus {
     color: white;
     border-color: #0a4b3e;
@@ -276,10 +276,10 @@ footer {
   fieldset[disabled] .btn-success.focus,
   fieldset[disabled] .btn-success:focus,
   fieldset[disabled] .btn-success:hover {
-    border-color: #12579c;
-    background-color: #12579c; }
+    border-color: #333333;
+    background-color: #333333; }
   .btn-success .badge {
-    color: #12579c;
+    color: #333333;
     background-color: white; }
 
 .btn-social {
@@ -303,6 +303,18 @@ footer {
 .btn-primary{
   background-color : #f25e3a;!important;
   border-color : #f25e3a;!important
+}
+
+.card-title{
+  color: #f5802d;!important;
+}
+
+.footer-custom{
+  color: #f25e3a;
+}
+
+.material-custom{
+  font-size: 20px;
 }
 
 /*.ng-invalid{   
