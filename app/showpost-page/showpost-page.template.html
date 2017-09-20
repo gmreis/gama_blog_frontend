@@ -33,7 +33,7 @@
         <form name="registerForm" ng-submit="showPostCtrl.registraUser()" novalidate>   
              <div class="form-group" ng-class="{ 'has-error' : registerForm.name.$invalid && showPostCtrl.submitted}">    
               <label for="input">Nome</label>   
-              <input type="text" class="form-control " name="name" ng-model="showPostCtrl.user.name" placeholder="Nome completo" ng-pattern="/^([A-Za-z\s]+)\s([A-Za-z\s]+)+$/" required>    
+              <input type="text" class="form-control " name="name" ng-model="showPostCtrl.user.name" placeholder="Nome completo" ng-pattern="/^([A-Za-zÀ-ÿ]+)\s([A-Za-zÀ-ÿ]+)+$/" required>    
               <small ng-show="registerForm.name.$invalid && showPostCtrl.submitted" class="form-text text-danger">
                 Por favor usar nome completo!   
               </small>      

@@ -2,8 +2,9 @@
   <div class="header-content">
     <div class="header-content-inner">
       <h1 id="homeHeading">[INFOGRÁFICO] 6 PASSOS PARA FAZER UM ORÇAMENTO DE OBRA EFICIENTE</h1>
+      <br/>
       <hr class="small-light">
-      <p>Baixe nosso infográfico gratuito e entenda o passo a passo para elaborar um orçamento de obra eficiente, garantindo o controle total sobre o seu projeto.</p>
+      <p style="font-size: 22px">Baixe nosso infográfico gratuito e entenda o passo a passo para elaborar um orçamento de obra eficiente, garantindo o controle total sobre o seu projeto.</p>
     </div>
   </div>
 </header>
@@ -11,14 +12,14 @@
 <!-- Contact Section -->
 <section id="contact">
   <div class="container">
-    <h2 class="text-center">BAIXAR INFOGRÁFICO</h2>
+    <h2 class="text-center">BAIXE GRÁTIS!</h2>
     <hr class="star-primary">
     <div class="row">
       <div class="col-lg-8 mx-auto">
         <form name="registerForm" ng-submit="contatoCtrl.registraUser()" novalidate>   
              <div class="form-group" ng-class="{ 'has-error' : registerForm.name.$invalid && contatoCtrl.submitted}">    
               <label for="input">Nome</label>   
-              <input type="text" class="form-control " name="name" ng-model="contatoCtrl.user.name" placeholder="Nome completo" ng-pattern="/^([A-Za-z\s]+)\s([A-Za-z\s]+)+$/" required>    
+              <input type="text" class="form-control " name="name" ng-model="contatoCtrl.user.name" placeholder="Nome completo" ng-pattern="/^([A-Za-zÀ-ÿ]+)\s([A-Za-zÀ-ÿ]+)+$/" required>    
               <small ng-show="registerForm.name.$invalid && contatoCtrl.submitted" class="form-text text-danger">
                 Por favor usar nome completo!   
               </small>      
@@ -31,7 +32,10 @@
               </small>      
             </div>
             <br />    
-            <button type="submit" class="btn btn-primary">BAIXAR!</button>    
+            <button type="submit" class="btn btn-primary">Receber material!</button>   
+              <small class="form-text text-secondary">
+                  Prometemos não utilizar suas informações de contato para enviar qualquer tipo de SPAM.
+              </small>   
           </form>
       </div>
     </div>

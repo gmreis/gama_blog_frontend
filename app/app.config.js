@@ -22,6 +22,12 @@ angular.
         when('/infografico', {
           template: '<contato-page></contato-page>'
         }).
+        when('/admin/login', {
+          template: '<login-page></login-page>'
+        }).
+        when('/admin/artigos', {
+          template: '<artigos-page></artigos-page>'
+        }).
         otherwise('/home');
     }
   ]).
