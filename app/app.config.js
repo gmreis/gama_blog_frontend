@@ -19,7 +19,7 @@ angular.
         when('/inscrito', {
           template: '<inscrito-page></inscrito-page>'
         }).
-        when('/contato', {
+        when('/infografico', {
           template: '<contato-page></contato-page>'
         }).
         otherwise('/home');

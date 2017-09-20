@@ -4,7 +4,7 @@
     <br />
     <p class="lead">Fique por dentro de tudo o que acontece no mercado e receba conteúdos especializados.</p>
     <br />
-    <a href="#!contato" class="btn btn-primary btn-lg">Inscreva-se</a>
+    <a href="#!infografico" class="btn btn-primary btn-lg">Inscreva-se</a>
 </header>
 
 <!-- Blog Post Section -->
@@ -27,6 +27,15 @@
           </div>
         </div>
       </div>
+      <div class="col-lg-3 col-md-6 mb-4">
+
+        <!-- Blog Post -->
+        <div class="card h-100">
+          <a href="#!/infografico">
+            <img class="card-img" ng-src="../img/banner-home1.png" alt="">
+          </a>
+        </div>
+      </div>
     </div>
 </section>
 
@@ -34,7 +43,7 @@
 <!-- Contact Section -->
 <section id="contact">
   <div class="container">
-    <h2 class="text-center">Entre em contato</h2>
+    <h2 class="text-center">Receba novidades</h2>
     <hr class="star-primary">
     <div class="row">
       <div class="col-lg-8 mx-auto">
@@ -48,7 +57,7 @@
             </div>    
             <div class="form-group" ng-class="{ 'has-error' : registerForm.email.$invalid && homeCtrl.submitted}">
               <label for="input">Email Profissional</label>    
-              <input type="email" class="form-control" name="email" ng-model="homeCtrl.user.email" placeholder="contato@gmail.com" required>   
+              <input type="email" class="form-control" name="email" ng-model="homeCtrl.user.email" placeholder="contato@suaEmpresa.com" required>   
               <small ng-show="registerForm.email.$invalid && homeCtrl.submitted" class="form-text text-danger">
                   Por favor usar email valido!     
               </small>      
