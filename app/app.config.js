@@ -2,9 +2,10 @@
 
 angular.
   module('construcaoBlogApp').
-  config(['$locationProvider' ,'$routeProvider',
-    function config($locationProvider, $routeProvider) {
+  config(['$locationProvider' ,'$routeProvider', '$compileProvider',
+    function config($locationProvider, $routeProvider, $compileProvider) {
       $locationProvider.hashPrefix('');
+      $compileProvider.debugInfoEnabled(false);
 
       $routeProvider.
         when('/home', {
