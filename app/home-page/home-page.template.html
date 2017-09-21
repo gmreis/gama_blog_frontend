@@ -4,7 +4,7 @@
     <br />
     <p class="lead">Insira seu email e receba novidades sobre o que acontece no mercado da construção civil e receba conteúdos exclusivos e especializados!</p>
     <br />
-    <a href="#!infografico" class="btn btn-primary btn-lg">Assine já</a>
+    <a href="#infografico" class="btn btn-primary btn-lg">Assine já</a>
 </header>
 
 <!-- Blog Post Section -->
@@ -15,7 +15,7 @@
 
         <!-- Blog Post -->
         <div class="card h-100">
-          <a href="#!/infografico">
+          <a href="#/infografico">
             <img class="card-img" ng-src="../img/banner-home1.png" alt="">
           </a>
         </div>
@@ -23,7 +23,7 @@
       <div class="col-lg-3 col-md-6 mb-4" ng-repeat="article in homeCtrl.articles">
         <!-- Blog Post -->
         <div class="card h-100">
-          <a href="#!/post/{{article._id}}">
+          <a href="#/post/{{article._id}}">
             <img class="card-img-top" ng-src="{{homeCtrl.getFaceImg(article.image)}}" alt="">
           </a>
           
@@ -32,7 +32,7 @@
             <p class="card-text" ng-bind-html="homeCtrl.renderHtml(article.description, true)"></p>
           </div>
           <div class="card-footer">
-            <a href="#!/post/{{article._id}}" class="btn btn-primary">Leia mais &rarr;</a>
+            <a href="#/post/{{article._id}}" class="btn btn-primary">Leia mais &rarr;</a>
           </div>
         </div>
       </div>

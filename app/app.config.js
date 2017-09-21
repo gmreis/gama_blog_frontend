@@ -4,7 +4,7 @@ angular.
   module('construcaoBlogApp').
   config(['$locationProvider' ,'$routeProvider',
     function config($locationProvider, $routeProvider) {
-      $locationProvider.hashPrefix('!');
+      $locationProvider.hashPrefix('');
 
       $routeProvider.
         when('/home', {
